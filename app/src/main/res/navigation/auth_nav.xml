@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/auth_nav"
+    app:startDestination="@id/genreFragment">
+
+    <fragment
+        android:id="@+id/genreFragment"
+        android:name="com.android.themoviedbapp.fragment.genre.GenreFragment"
+        android:label="GenreFragment">
+
+        <action
+            android:id="@+id/genreFragment_to_discoverFragment"
+            app:destination="@id/discoverFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/discoverFragment"
+        android:name="com.android.themoviedbapp.fragment.discover.DiscoverFragment"
+        android:label="DiscoverFragment">
+
+        <argument
+            android:name="genre"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/discoverFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.android.themoviedbapp.fragment.movie_detail.MovieDetailFragment"
+        android:label="MovieDetailFragment">
+
+    <argument
+        android:name="discover"
+        app:argType="integer"/>
+
+    </fragment>
+
+</navigation>
